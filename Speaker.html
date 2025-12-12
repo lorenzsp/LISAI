@@ -1,278 +1,152 @@
-import React, { useState } from 'react';
-import { Check, X, Clock } from 'lucide-react';
-
-export default function SpeakerSchedulingPoll() {
-  const [speakers, setSpeakers] = useState([
-    { id: 1, name: '' },
-  ]);
-  
-  const [timeSlots, setTimeSlots] = useState([
-    { id: 1, week: 'Week 1 (July 21-25, 2026)' },
-    { id: 2, week: 'Week 2 (August 4-8, 2026)' },
-    { id: 3, week: 'Week 3 (September 1-5, 2026)' },
-  ]);
-  
-  const [availability, setAvailability] = useState({});
-  const [pollTitle, setPollTitle] = useState('Hackathon Keynote Speaker Scheduling');
-  const [eventDescription, setEventDescription] = useState('Machine Learning Methods for Overlapping Signals in LISA');
-
-  const addSpeaker = () => {
-    setSpeakers([...speakers, { id: Date.now(), name: '' }]);
-  };
-
-  const updateSpeaker = (id, name) => {
-    setSpeakers(speakers.map(s => s.id === id ? { ...s, name } : s));
-  };
-
-  const removeSpeaker = (id) => {
-    setSpeakers(speakers.filter(s => s.id !== id));
-  };
-
-  const updateTimeSlot = (id, field, value) => {
-    setTimeSlots(timeSlots.map(t => t.id === id ? { ...t, [field]: value } : t));
-  };
-
-  const toggleAvailability = (speakerId, slotId, status) => {
-    const key = `${speakerId}-${slotId}`;
-    setAvailability(prev => ({
-      ...prev,
-      [key]: prev[key] === status ? null : status
-    }));
-  };
-
-  const getAvailabilityStatus = (speakerId, slotId) => {
-    return availability[`${speakerId}-${slotId}`] || null;
-  };
-
-  const countAvailable = (slotId) => {
-    return speakers.filter(s => s.name.trim() && getAvailabilityStatus(s.id, slotId) === 'available').length;
-  };
-
-  const countUnavailable = (slotId) => {
-    return speakers.filter(s => s.name.trim() && getAvailabilityStatus(s.id, slotId) === 'unavailable').length;
-  };
-
-  const exportData = () => {
-    const data = {
-      poll: { title: pollTitle, description: eventDescription },
-      speakers: speakers.filter(s => s.name.trim()),
-      timeSlots,
-      availability
-    };
-    const json = JSON.stringify(data, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'speaker-scheduling-poll.json';
-    a.click();
-  };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
-      <div className="max-w-6xl mx-auto">
-        
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">{pollTitle}</h1>
-          <p className="text-lg text-gray-600">{eventDescription}</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          {/* Left Column: Configuration */}
-          <div className="space-y-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Availability Poll</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .poll-cell { cursor: pointer; transition: all 0.2s; }
+        .available { @apply bg-green-100 text-green-700; }
+        .unavailable { @apply bg-red-100 text-red-700; }
+        .undecided { @apply bg-gray-100 text-gray-400; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="min-h-screen p-8">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Hackathon Keynote Speaker Scheduling</h1>
+            <p class="text-lg text-gray-600 mb-8">Machine Learning Methods for Overlapping Signals in LISA</p>
             
-            {/* Poll Settings */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Poll Settings</h2>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Poll Title</label>
-                  <input
-                    type="text"
-                    value={pollTitle}
-                    onChange={(e) => setPollTitle(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Speaker Availability</h2>
+                <p class="text-gray-600 mb-6">Click a cell to mark availability. ✓ = Available, ✗ = Unavailable</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse" id="pollTable">
+                        <thead>
+                            <tr class="border-b-2 border-gray-300">
+                                <th class="text-left py-3 px-4 font-bold text-gray-800">Speaker Name</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200">Week 1<br>(July 21-25)</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200">Week 2<br>(August 4-8)</th>
+                                <th class="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200">Week 3<br>(Sept 1-5)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Event Description</label>
-                  <textarea
-                    value={eventDescription}
-                    onChange={(e) => setEventDescription(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    rows="2"
-                  />
-                </div>
-              </div>
-            </div>
 
-            {/* Speakers */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Speakers</h2>
-              <div className="space-y-3">
-                {speakers.map(speaker => (
-                  <div key={speaker.id} className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="Enter speaker name"
-                      value={speaker.name}
-                      onChange={(e) => updateSpeaker(speaker.id, e.target.value)}
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                    {speakers.length > 1 && (
-                      <button
-                        onClick={() => removeSpeaker(speaker.id)}
-                        className="px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition"
-                      >
-                        Remove
-                      </button>
-                    )}
-                  </div>
-                ))}
-                <button
-                  onClick={addSpeaker}
-                  className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium"
-                >
-                  + Add Speaker
-                </button>
-              </div>
-            </div>
-
-            {/* Time Slots */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Time Slots (3 Weeks)</h2>
-              <div className="space-y-3">
-                {timeSlots.map(slot => (
-                  <div key={slot.id} className="space-y-2 p-3 bg-gray-50 rounded-lg">
-                    <div>
-                      <label className="block text-xs font-medium text-gray-600 mb-1">Week Period</label>
-                      <input
-                        type="text"
-                        value={slot.week}
-                        onChange={(e) => updateTimeSlot(slot.id, 'week', e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="e.g., Week 1 (July 21-25, 2026)"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">Date</label>
-                        <input
-                          type="date"
-                          value={slot.date}
-                          onChange={(e) => updateTimeSlot(slot.id, 'date', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-4">Add Speaker</h3>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            id="speakerInput" 
+                            placeholder="Enter speaker name" 
+                            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                         />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">Time</label>
-                        <input
-                          type="time"
-                          value={slot.time}
-                          onChange={(e) => updateTimeSlot(slot.id, 'time', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                      </div>
+                        <button 
+                            onclick="addSpeaker()" 
+                            class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium"
+                        >
+                            Add Speaker
+                        </button>
                     </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-gray-500 mt-4 p-3 bg-blue-50 rounded">
-                💡 Tip: Keep exactly 3 time slots for the 3 weeks. Edit the week period labels to reflect your actual dates.
-              </p>
-            </div>
-
-            {/* Export */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <button
-                onClick={exportData}
-                className="w-full px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium"
-              >
-                📥 Export Poll Data (JSON)
-              </button>
-              <p className="text-xs text-gray-500 mt-2 text-center">Download data to share or integrate elsewhere</p>
-            </div>
-          </div>
-
-          {/* Right Column: Poll Preview */}
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-8 h-fit max-h-[90vh] overflow-y-auto">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Poll Preview</h2>
-            <p className="text-sm text-gray-500 mb-6">Speakers mark their availability below</p>
-
-            {speakers.filter(s => s.name.trim()).length === 0 ? (
-              <div className="text-center py-12">
-                <Clock className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500">Add speakers to see the poll</p>
-              </div>
-            ) : (
-              <>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse">
-                    <thead>
-                      <tr className="border-b-2 border-gray-300">
-                        <th className="text-left py-3 px-2 font-bold text-gray-800 min-w-40">Speaker</th>
-                        {timeSlots.map(slot => (
-                          <th key={slot.id} className="text-center py-3 px-2 font-medium text-sm text-gray-700 border-l border-gray-200">
-                            <div className="whitespace-normal text-xs">
-                              <div className="font-bold">{slot.week}</div>
-                            </div>
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {speakers.filter(s => s.name.trim()).map(speaker => (
-                        <tr key={speaker.id} className="border-b border-gray-200 hover:bg-gray-50">
-                          <td className="py-3 px-2 font-medium text-gray-800">{speaker.name}</td>
-                          {timeSlots.map(slot => (
-                            <td key={`${speaker.id}-${slot.id}`} className="text-center py-3 px-2 border-l border-gray-200">
-                              <div className="flex gap-1 justify-center">
-                                <button
-                                  onClick={() => toggleAvailability(speaker.id, slot.id, 'available')}
-                                  className={`p-2 rounded ${getAvailabilityStatus(speaker.id, slot.id) === 'available' ? 'bg-green-100' : 'bg-gray-100 hover:bg-gray-200'} transition`}
-                                  title="Available"
-                                >
-                                  <Check className={`w-5 h-5 ${getAvailabilityStatus(speaker.id, slot.id) === 'available' ? 'text-green-600' : 'text-gray-400'}`} />
-                                </button>
-                                <button
-                                  onClick={() => toggleAvailability(speaker.id, slot.id, 'unavailable')}
-                                  className={`p-2 rounded ${getAvailabilityStatus(speaker.id, slot.id) === 'unavailable' ? 'bg-red-100' : 'bg-gray-100 hover:bg-gray-200'} transition`}
-                                  title="Unavailable"
-                                >
-                                  <X className={`w-5 h-5 ${getAvailabilityStatus(speaker.id, slot.id) === 'unavailable' ? 'text-red-600' : 'text-gray-400'}`} />
-                                </button>
-                              </div>
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <h3 className="font-bold text-gray-800 mb-4">Week Summary</h3>
-                  <div className="space-y-2">
-                    {timeSlots.map(slot => (
-                      <div key={slot.id} className="flex items-center justify-between text-sm p-3 bg-gray-50 rounded">
-                        <div>
-                          <div className="font-medium text-gray-800">{slot.week}</div>
-                        </div>
-                        <div className="flex gap-3">
-                          <span className="text-green-600 font-medium">{countAvailable(slot.id)} ✓</span>
-                          <span className="text-red-600 font-medium">{countUnavailable(slot.id)} ✗</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                <div class="mt-6">
+                    <button 
+                        onclick="downloadData()" 
+                        class="w-full px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium"
+                    >
+                        📥 Download Results (JSON)
+                    </button>
                 </div>
-              </>
-            )}
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-  );
-}
+
+    <script>
+        const speakers = JSON.parse(localStorage.getItem('speakers')) || [];
+        const availability = JSON.parse(localStorage.getItem('availability')) || {};
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            
+            speakers.forEach(speaker => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-200 hover:bg-gray-50';
+                
+                row.innerHTML = `
+                    <td class="py-3 px-4 font-medium text-gray-800">${speaker}</td>
+                    ${[1, 2, 3].map(week => `
+                        <td class="text-center py-3 px-4 border-l border-gray-200">
+                            <button 
+                                onclick="toggleAvailability('${speaker}', ${week}, 'available')"
+                                class="poll-cell undecided ${availability[speaker + '-' + week] === 'available' ? 'available' : ''} px-3 py-2 rounded hover:bg-green-200 transition"
+                            >
+                                ✓
+                            </button>
+                            <button 
+                                onclick="toggleAvailability('${speaker}', ${week}, 'unavailable')"
+                                class="poll-cell undecided ${availability[speaker + '-' + week] === 'unavailable' ? 'unavailable' : ''} px-3 py-2 rounded hover:bg-red-200 transition ml-2"
+                            >
+                                ✗
+                            </button>
+                        </td>
+                    `).join('')}
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        function addSpeaker() {
+            const input = document.getElementById('speakerInput');
+            const name = input.value.trim();
+            
+            if (name && !speakers.includes(name)) {
+                speakers.push(name);
+                localStorage.setItem('speakers', JSON.stringify(speakers));
+                input.value = '';
+                renderTable();
+            }
+        }
+
+        function toggleAvailability(speaker, week, status) {
+            const key = speaker + '-' + week;
+            
+            if (availability[key] === status) {
+                delete availability[key];
+            } else {
+                availability[key] = status;
+            }
+            
+            localStorage.setItem('availability', JSON.stringify(availability));
+            renderTable();
+        }
+
+        function downloadData() {
+            const data = {
+                poll: 'Hackathon Keynote Speaker Scheduling',
+                speakers,
+                availability,
+                exportDate: new Date().toISOString()
+            };
+            
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'speaker-poll-results.json';
+            a.click();
+        }
+
+        // Initial render
+        renderTable();
+    </script>
+</body>
+</html>
