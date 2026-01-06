@@ -50,7 +50,7 @@ Participants can work on projects including:
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | Friday, July 31 |
 |------|----------------|------------------|--------------------|--------------------|-----------------|
-| 09:30-10:15 | | **Green: Theory** | **Houba: Theory** | *Research Visit ESTEC* | **TBD Speaker: Theory + Q&A** |
+| 09:30-10:15 | | **Green: Theory** | **Houba: Theory** |  | **TBD Speaker: Theory + Q&A** |
 | 10:15-10:45 |  | **Coffee Break** | **Coffee Break** | *Research Visit ESTEC* | **Coffee Break** |
 | 10:45-11:45 |  | **Green: Hands-on** | **Houba: Hands-on** | *Research Visit ESTEC* | **TBD Speaker: Hands-on** |
 | 11:45-12:45 |  | **Green: Hands-on** | **Houba: Hands-on** | ESTEC LISA Team Talk | **TBD Speaker: Hands-on** |
