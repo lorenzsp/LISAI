@@ -50,18 +50,11 @@ Participants can work on projects including:
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | Friday, July 31 |
 |------|----------------|------------------|--------------------|--------------------|-----------------|
-| 09:30-10:15 | | **Green: Theory** | **Houba: Theory** |  | **TBD Speaker: Theory + Q&A** |
-| 10:15-10:45 |  | **Coffee Break** | **Coffee Break** | *Research Visit ESTEC* | **Coffee Break** |
-| 10:45-11:45 |  | **Green: Hands-on** | **Houba: Hands-on** | *Research Visit ESTEC* | **TBD Speaker: Hands-on** |
-| 11:45-12:45 |  | **Green: Hands-on** | **Houba: Hands-on** | ESTEC LISA Team Talk | **TBD Speaker: Hands-on** |
-| 12:45-13:00 |  | LISA Applications | LISA Applications | ML for Missions Discussion | LISA Applications |
-| 13:00-14:00 | **Arrivals & Intro** | **Lunch Break** | **Lunch Break** | **Lunch Break** | **Wrap-up & Closing** |
-| 14:00-14:45 | **Weniger: Theory + Q&A** | Contributed Talks (2×30min) | Contributed Talks (2×30min) | **Dax: Theory + Q&A** | *Departures* |
-| 14:45-15:15 | **Coffee Break** | **Coffee Break** | **Coffee Break** | **Coffee Break** |  |
-| 15:15-16:15 | **Weniger: Hands-on** | Contributed Talks (2×30min) | Contributed Talks (2×30min) | **Dax: Hands-on** |  |
-| 16:15-17:15 | **Weniger: Hands-on** | Contributed Talks (2×30min) | Contributed Talks (2×30min) | **Dax: Hands-on** |  |
-| 17:15-17:30 | LISA Applications | LISA Discussion | LISA Discussion | LISA Applications |  |
-| 17:30+ | End of Day | End of Day | **Conference Dinner** | End of Day |  |
+| **Morning** | *Arrivals & Setup* | **Stephen Green**<br>Theory + Q&A<br>Hands-on Tutorial | **Niklas Houba**<br>Theory + Q&A<br>Hands-on Tutorial | **ESTEC Visit**<br>Research Facilities Tour<br>LISA Team Presentation | **TBD Speaker**<br>Theory + Q&A<br>Hands-on Tutorial |
+| **Lunch** | | Break | Break | Break | Break |
+| **Afternoon** | **Introductions**<br>**Christoph Weniger**<br>Theory + Q&A<br>Hands-on Tutorial | **Contributed Talks**<br>(Participant presentations) | **Contributed Talks**<br>(Participant presentations)<br>**Conference Dinner** | **Maximilian Dax**<br>Theory + Q&A<br>Hands-on Tutorial | **Wrap-up & Closing**<br>Final Discussions<br>*Departures* |
+
+*Note: Detailed schedule with specific times will be finalized closer to the event*
 
 ## Principles for a Successful Hackathon
 
@@ -122,10 +115,10 @@ Participants can work on projects including:
 **Event Lead:** Lorenzo Speri (RF at ESTEC)
 
 **Keynote Speakers:**
-- Christoph Weniger (University of Amsterdam) - Simulation-Based Inference
-- Niklas Houba (ETH Zurich/ESA) - LISA Data Analysis & Source Separation
-- Maximilian Dax (MPI Tübingen) - Neural Posterior Estimation & Flow Matching
-- Stephen Green (MPI Potsdam) - Fast Gravitational-Wave Parameter Estimation
+- Christoph Weniger - Simulation-Based Inference
+- Niklas Houba - LISA Noise & Source Separation
+- Maximilian Dax - Neural Posterior Estimation & Flow Matching
+- Stephen Green - Gravitational-Wave Parameter Estimation
 
 ---
 
