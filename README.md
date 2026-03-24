@@ -50,9 +50,9 @@ Participants can work on projects including:
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | Friday, July 31 |
 |------|----------------|------------------|--------------------|--------------------|-----------------|
-| **Morning** | *Arrivals & Setup* | **Stephen Green**<br>Theory + Q&A<br>Hands-on Tutorial | **Niklas Houba**<br>Theory + Q&A<br>Hands-on Tutorial | **ESTEC Visit**<br>Research Facilities Tour<br>LISA Team Presentation | **TBD Speaker**<br>Theory + Q&A<br>Hands-on Tutorial |
+| **Morning** | *Arrivals & Setup* | **Stephen Green**<br>Theory + Q&A<br>Hands-on Tutorial | **Niklas Houba**<br>Theory + Q&A<br>Hands-on Tutorial | **ESTEC Visit**<br>Research Facilities Tour<br>LISA Team Presentation | *Departures* |
 | **Lunch** | | Break | Break | Break | Break |
-| **Afternoon** | **Introductions**<br>**Christoph Weniger**<br>Theory + Q&A<br>Hands-on Tutorial | **Contributed Talks**<br>(Participant presentations) | **Contributed Talks**<br>(Participant presentations)<br>**Conference Dinner** | **Maximilian Dax**<br>Theory + Q&A<br>Hands-on Tutorial | **Wrap-up & Closing**<br>Final Discussions<br>*Departures* |
+| **Afternoon** | **Introductions**<br>**Christoph Weniger**<br>Theory + Q&A<br>Hands-on Tutorial | **Contributed Talks**<br>(Participant presentations) | **Tom Dooney**<br> Source Separation<br>**Conference Dinner** | **Maximilian Dax**<br>Theory + Q&A<br>Hands-on Tutorial | *Departures* |
 
 *Note: Detailed schedule with specific times will be finalized closer to the event*
 
@@ -119,6 +119,7 @@ Participants can work on projects including:
 - Niklas Houba - LISA Noise & Source Separation
 - Maximilian Dax - Neural Posterior Estimation & Flow Matching
 - Stephen Green - Gravitational-Wave Parameter Estimation
+- Tom Dooney - Source Separation
 
 ---
 
@@ -184,37 +185,6 @@ Participants can work on projects including:
 - [ ] Plan follow-up virtual meetings
 - [ ] Support publication efforts from teams
 - [ ] Apply lessons learned to future events
-
----
-
-## Planning Questions to Resolve
-
-### Technical Setup
-1. **Tutorial depth**: Should tutorials assume participants know Python/ML basics, or include fundamentals?
-   - *Recommendation: Require basic Python proficiency; tutorials focus on LISA-specific ML applications*
-
-2. **Compute resources**: Will you provide cloud compute, or should participants bring laptops? GPU access needed?
-   - *Consider: Mix of local laptops + shared cloud resources for heavy computation*
-
-3. **Datasets**: Do you have LISA mock data ready, or should speakers prepare/bring their own?
-   - *Action needed: Coordinate with speakers on data requirements*
-
-### Participant Experience
-4. **Pre-hackathon prep**: Should participants complete any preparatory work (reading, software installation)?
-   - *Recommendation: Yes - environment setup + 2-3 key papers per project area*
-
-5. **Team formation**: Pre-assign teams or let them self-organize on Day 1?
-   - *Suggestion: Mix - balance experience levels, but let people indicate project preferences*
-
-6. **Deliverables**: What should teams produce (working code, report, presentation)?
-   - *Minimum: 12-min presentation + GitHub repo with README*
-
-### Post-Event
-7. **Follow-up**: Plan for post-hackathon collaboration (GitHub org, papers, future meetings)?
-   - *Set up: Monthly virtual meetings + collaborative paper opportunities*
-
-8. **Speaker roles**: Beyond talks, should each speaker "mentor" specific project teams?
-   - *Recommended: Yes - assign 1-2 speakers per project area*
 
 ---
 
