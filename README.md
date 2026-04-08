@@ -1,4 +1,4 @@
-# Hackathon: Machine Learning Methods for Overlapping Signals
+# LISA AI Hackathon: Machine Learning Methods for LISA
 
 ## Event Overview
 
@@ -8,13 +8,13 @@ Key challenges include:
 - Designing ML approaches for extreme mass ratio inspirals
 - Implementing robust methods for noise inference
 - Developing techniques for source separation
-Proposed Week 1: July 27–31, 2026
+Proposed Week 1: July 27–30, 2026
 
 **Location:** [ESTEC](https://www.esa.int/About_Us/ESTEC/How_to_get_to_ESTEC), Noordwijk, Netherlands
 
-**Duration:** 4-5 days
+**Duration:** 4 days
 
-**Target Participants:** ~10-15
+**Target Participants:** ~20
 
 **Funding:** Support available for travel and accommodation for early-career researchers
 
@@ -22,11 +22,9 @@ Proposed Week 1: July 27–31, 2026
 
 The event will feature:
 
-- Keynote talks on machine learning, Bayesian inference, and gravitational wave astronomy
+- Keynote talks on machine learning, Bayesian inference, and ESA activities for LISA
 - Hands-on tutorials on simulation-based inference and deep learning techniques
 - Team-based projects addressing real LISA data analysis challenges
-- Collaborative sessions with early-career researchers and senior experts
-- Networking and interdisciplinary collaboration
 
 ### Why This Matters
 
@@ -69,52 +67,14 @@ Participants can work on projects including:
 - Identify promising research directions for follow-up publications
 - Lower the barrier to entry for early-career researchers in this interdisciplinary field
 
-### Core Principles
-
-1. **Hands-On First, Theory Second**
-   - Minimize passive listening; maximize active coding and experimentation
-   - Short keynotes (45 min max) that motivate rather than exhaust
-   - Tutorials should be interactive with live coding examples
-
-2. **Psychological Safety & Collaboration**
-   - Emphasize that failure and debugging are part of the learning process
-   - Encourage questions at all levels—no "stupid questions"
-   - Mix experience levels within teams to promote peer learning
-   - Create space for informal discussions during breaks
-
-3. **Clear Scope & Realistic Expectations**
-   - Define achievable 3-day project scopes during team formation
-   - Focus on learning and exploration over perfect solutions
-   - Celebrate progress and insights, not just "finished" projects
-
-4. **Speaker Accessibility**
-   - Speakers should be present and circulating during team work sessions
-   - Encourage 1-on-1 and small group consultations
-   - Speakers should actively offer help rather than waiting to be asked
-
-5. **Prepared Infrastructure**
-   - All software environments tested and documented before Day 1
-   - Example datasets and starter code available immediately
-   - Backup plans for technical issues (documentation, alternative approaches)
-   - Shared repository for code, notes, and resources
-
-6. **Documentation & Knowledge Transfer**
-   - Encourage teams to document their approach and learnings
-   - Short daily stand-ups to share progress and challenges across teams
-   - Final presentations focus on "what we learned" not just "what we built"
-
-7. **Sustainable Momentum**
-   - Establish communication channels for post-hackathon collaboration
-   - Identify potential publication opportunities
-   - Plan for follow-up virtual meetings or future events
-
 ---
 
 ## Organizing Committee
 
-**Event Lead:** Lorenzo Speri (RF at ESTEC)
+**Event Lead:** Lorenzo Speri
 
-**Keynote Speakers:**
+## Keynote Speakers:
+
 - Christoph Weniger - Simulation-Based Inference
 - Niklas Houba - LISA Noise & Source Separation
 - Maximilian Dax - Neural Posterior Estimation & Flow Matching
@@ -125,45 +85,37 @@ Participants can work on projects including:
 
 ## Organizer's TODO List
 
-### Immediate (January-February 2026)
 - [x] Send formal invitation emails to all four keynote speakers with proposed talk titles
-- [ ] Confirm speaker availability and travel requirements
-- [ ] Define participant application process and selection criteria
-- [ ] Set application deadline (suggest: May 1, 2026)
-- [ ] Prepare budget breakdown and secure funding approvals
+- [x] Confirm speaker availability
+- [ ] Travel requirements for speakers
+- [ ] Prepare budget breakdown
 
-### Logistics (March-May 2026)
 - [x] Book meeting rooms at ESTEC (main room + breakout spaces)
-- [ ] Arrange accommodation for speakers and participants
-- [ ] Organize catering (lunches, coffee breaks)
 - [ ] Set up reimbursement procedures for travel expenses
 - [ ] Arrange visitor badges and security clearances for ESTEC
-- [ ] Plan social dinner (evening of Day 2 or 3)
+- [ ] Plan social dinner (evening of Day 2 or 3) and book room for lunch
 
-### Technical Infrastructure (April-June 2026)
+### Technical Infrastructure
 - [ ] Survey participants on compute needs (laptop specs, GPU access)
-- [ ] Set up shared computing resources (cloud credits, server access)
 - [ ] Create GitHub organization for hackathon repositories
-- [ ] Prepare LISA mock data catalogs and noise realizations
-- [ ] Test tutorial environments and create Docker containers/conda envs
-- [ ] Set up Slack/Discord for pre-event communication
+- [ ] Test tutorial environments on colab
 
-### Content Preparation (May-July 2026)
-- [ ] Coordinate with speakers on tutorial content and materials
+### Content Preparation
+- [x] Coordinate with speakers on tutorial content and materials
 - [ ] Prepare starter code repositories for each project area
 - [ ] Create documentation: setup guides, troubleshooting, resources
 - [ ] Compile reading list and pre-hackathon materials
 - [ ] Design project descriptions with clear scope and deliverables
 - [ ] Prepare welcome package (schedule, WiFi, emergency contacts)
 
-### Speaker Coordination (June-July 2026)
+### Speaker Coordination
 - [ ] Request presentation slides 1 week before event
 - [ ] Confirm tutorial software/dependencies with each speaker
 - [ ] Assign each speaker to mentor specific project teams
 - [ ] Schedule pre-event call with speakers to align expectations
 - [ ] Arrange speaker travel and accommodation confirmations
 
-### Communication (May-July 2026)
+### Communication
 - [ ] Send acceptance/rejection emails to applicants
 - [ ] Provide pre-hackathon installation instructions (2 weeks before)
 - [ ] Send final logistics email (1 week before)
@@ -178,7 +130,7 @@ Participants can work on projects including:
 - [ ] Document event (photos, notes) for future reference
 - [ ] Collect feedback daily
 
-### Post-Event (August 2026)
+### Post-Event
 - [ ] Distribute post-event survey
 - [ ] Archive all code, data, and presentations
 - [ ] Write summary report
