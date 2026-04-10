@@ -2,6 +2,8 @@
 
 ## Tutorial Setup
 
+This tutorial is available on colab click [here](https://colab.research.google.com/github/tomdooney95/deepextractor/blob/main/notebooks/training_tutorial_colab.ipynb) to run it on colab. This is based on [DeepExtractor](https://deepextractor.readthedocs.io/en/latest) available on [GitHub](https://github.com/tomdooney95/deepextractor).
+
 This folder contains the materials for the tutorial on Source Separation by Tom Dooney.
 
 ## Setup Instructions
