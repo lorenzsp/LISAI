@@ -4,12 +4,6 @@
 
 This informal hackathon event focuses leveraging machine learning to tackle the data analysis challenges of the future LISA mission.
 
-Key challenges include:
-- Developing algorithms to characterize multiple overlapping signals from Galactic binaries
-- Designing Machine Learning (ML) approaches for extreme mass ratio inspirals
-- Implementing robust methods for noise inference
-- Developing techniques for signal separation
-
 **Dates:** July 27–30, 2026  
 **Location:** [ESTEC](https://www.esa.int/About_Us/ESTEC/How_to_get_to_ESTEC), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands  
 **Duration:** 4 days  
@@ -37,13 +31,17 @@ To fully exploit LISA's scientific potential, we must extract meaningful signals
 
 This hackathon aims to develop machine learning approaches that combine the speed of neural networks with the statistical rigor of Bayesian inference.
 
-| Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | Friday, July 31 |
-|------|----------------|------------------|--------------------|--------------------|-----------------|
-| **Morning** | *Arrivals & Setup* | **Stephen Green**<br>Theory + Q&A<br>Hands-on Tutorial | **Niklas Houba**<br>Theory + Q&A<br>Hands-on Tutorial | **ESTEC Visit**<br>Research Facilities Tour<br>LISA Team Presentation | *Departures* |
+| Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | 
+|------|----------------|------------------|--------------------|--------------------|
+| **Morning** | *Arrivals & Setup* | **Stephen Green**<br>Theory + Q&A<br>Hands-on Tutorial | **Niklas Houba**<br>Theory + Q&A<br>Hands-on Tutorial | **ESTEC Visit**<br>Research Facilities Tour<br>LISA Team Presentation |
 | **Lunch** | | Break | Break | Break | Break |
-| **Afternoon** | **Introductions**<br>**Christoph Weniger**<br>Theory + Q&A<br>Hands-on Tutorial | **Contributed Talks**<br>(Participant presentations) | **Tom Dooney**<br>Signal Separation<br>**Conference Dinner** | **Maximilian Dax**<br>Theory + Q&A<br>Hands-on Tutorial | *Departures* |
+| **Afternoon** | **Introductions**<br>**Christoph Weniger**<br>Theory + Q&A<br>Hands-on Tutorial | **Contributed Talks**<br>(Participant presentations) | **Tom Dooney**<br>Signal Separation<br>**Conference Dinner** | **Maximilian Dax**<br>Theory + Q&A<br>Hands-on Tutorial |
 
-*Detailed schedule will be finalized closer to the event.*
+Key challenges include:
+- Developing algorithms to characterize multiple overlapping signals from Galactic binaries
+- Designing Machine Learning (ML) approaches for extreme mass ratio inspirals
+- Implementing robust methods for noise inference
+- Developing techniques for signal separation
 
 ---
 
