@@ -17,39 +17,25 @@ Key challenges include:
 
 **Funding:** Support available for travel and accommodation for early-career researchers  
 
-## Table of Contents
+## Useful Information
 
 - [Event Overview](#event-overview)
-- [Why This Matters](#why-this-matters)
-- [Project Areas](#project-areas)
 - [Hackathon Program](#hackathon-program)
 - [Travelling Information](#travelling-information)
-  - [Overall Useful Links and Tips](#overall-useful-links-and-tips)
-  - [By Plane](#by-plane)
-  - [By Train](#by-train)
 - [Accommodation](#accommodation)
-  - [Seaside (Katwijk aan Zee / Noordwijk aan Zee)](#seaside-katwijk-aan-zee--noordwijk-aan-zee)
-  - [Leiden](#leiden)
-  - [Nearby Leiden](#nearby-leiden)
-  - [The Hague](#the-hague)
-- [Goals](#goals)
 - [Organizing Committee](#organizing-committee)
 - [Keynote Speakers](#keynote-speakers)
 - [Code of Conduct](#code-of-conduct)
 
 ---
 
-## Why This Matters
+## Hackathon Program
 
 The Laser Interferometer Space Antenna (LISA) will be the first space-based gravitational wave observatory, opening a new observational window in the millihertz frequency regime. 
 
 To fully exploit LISA's scientific potential, we must extract meaningful signals from a complex mixture of noise and overlapping sources—analogous to disentangling multiple conversations in a crowded environment.
 
 This hackathon aims to develop machine learning approaches that combine the speed of neural networks with the statistical rigor of Bayesian inference.
-
----
-
-## Hackathon Program
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | Friday, July 31 |
 |------|----------------|------------------|--------------------|--------------------|-----------------|
@@ -138,19 +124,6 @@ ESTEC is located in Noordwijk. The most convenient locations to stay are:
 - [Fletcher Hotel Leidschendam – Den Haag](https://www.booking.com/hotel/nl/mercure-den-haag-leidschendam.en-gb.html)
 
 **Note:** ESA does not provide hotel booking services and has not authorized third parties to do so.
-
----
-
-## Goals
-
-**Primary Goal:** Enable participants to gain hands-on experience with modern ML techniques for LISA data analysis, fostering collaborations beyond the event.
-
-**Specific Objectives:**
-- Equip participants with practical skills in simulation-based inference and neural posterior estimation
-- Create working prototypes for key LISA data analysis challenges
-- Build an interdisciplinary community
-- Identify directions for follow-up publications
-- Lower barriers to entry for early-career researchers
 
 ---
 
