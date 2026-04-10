@@ -17,6 +17,25 @@ Key challenges include:
 
 **Funding:** Support available for travel and accommodation for early-career researchers  
 
+## Table of Contents
+
+- [Event Overview](#event-overview)
+- [Why This Matters](#why-this-matters)
+- [Project Areas](#project-areas)
+- [Hackathon Program](#hackathon-program)
+- [Travelling Information](#travelling-information)
+  - [Overall Useful Links and Tips](#overall-useful-links-and-tips)
+  - [By Plane](#by-plane)
+  - [By Train](#by-train)
+- [Accommodation](#accommodation)
+  - [Seaside (Katwijk aan Zee / Noordwijk aan Zee)](#seaside-katwijk-aan-zee--noordwijk-aan-zee)
+  - [Leiden](#leiden)
+  - [Nearby Leiden](#nearby-leiden)
+  - [The Hague](#the-hague)
+- [Goals](#goals)
+- [Organizing Committee](#organizing-committee)
+- [Keynote Speakers](#keynote-speakers)
+- [Code of Conduct](#code-of-conduct)
 
 ---
 
