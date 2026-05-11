@@ -25,11 +25,7 @@ This informal hackathon event focuses leveraging machine learning to tackle the 
 
 ## Hackathon Program
 
-The Laser Interferometer Space Antenna (LISA) will be the first space-based gravitational wave observatory, opening a new observational window in the millihertz frequency regime. 
-
-To fully exploit LISA's scientific potential, we must extract meaningful signals from a complex mixture of noise and overlapping sources—analogous to disentangling multiple conversations in a crowded environment.
-
-This hackathon aims to develop machine learning approaches that combine the speed of neural networks with the statistical rigor of Bayesian inference.
+The Laser Interferometer Space Antenna (LISA) is one of the European Space Agency flagship mission and will be the first space-based gravitational wave observatory, opening a new observational window in the millihertz frequency regime. To fully exploit LISA's scientific potential, we must extract gravitational wave signals from a complex mixture of noise and overlapping sources. This hackathon aims to develop machine learning approaches that combine the speed of neural networks with the statistical rigor of Bayesian inference to address LISA data analysis challenges.
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | 
 |------|----------------|------------------|--------------------|--------------------|
