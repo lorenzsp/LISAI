@@ -6,10 +6,6 @@ This informal hackathon event focuses leveraging machine learning to tackle the 
 
 **Dates:** July 27–30, 2026  
 **Location:** [ESTEC](https://www.esa.int/About_Us/ESTEC/How_to_get_to_ESTEC), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands  
-**Duration:** 4 days  
-**Target Participants:** ~20  
-
-**Funding:** Support available for travel and accommodation for early-career researchers  
 
 ## Useful Information
 
