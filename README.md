@@ -29,13 +29,10 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
-
 | 09:00–10:30 | Arrival & check-in; participant registration; informal networking | Stephen Green — Motivation + scientific framing (20 min); Tutorial Part 1 (baseline pipeline) | Niklas Houba — Motivation + scientific framing (20 min); Tutorial Part 1 (baseline pipeline) | ESTEC Visit — facility tour; LISA mission overview |
 | 10:30–11:30 | Environment setup (repo access, installs, debugging support) | Tutorial Part 1 continues → baseline completion and first results | Tutorial Part 1 continues → baseline completion and first results | ESTEC Visit continues; instrumentation + mission Q&A |
 | 11:30–12:30 | Setup support, diagnostics notebooks, breakout help | Tutorial Part 2 — extensions + challenge introduction and start | Tutorial Part 2 — extensions + challenge continuation | ESTEC wrap-up + informal discussions |
-
 | 12:30–14:00 | Lunch | Lunch | Lunch | Lunch |
-
 | 14:00–15:00 | Workshop opening (goals, datasets, challenges) + Christoph Weniger — motivation + framing + start tutorial | Contributed talks — Session 1 (participant presentations) | Tom Dooney — signal separation motivation + guided exploration | Maximilian Dax — motivation + framing + Tutorial Part 1 |
 | 15:00–15:30 | Christoph Weniger — Tutorial Part 1 (baseline pipeline) | Contributed talks — Session 1 continues | Guided exploration continues | Tutorial Part 1 continues |
 | 15:30–16:30 | Break + debugging + informal discussions | Break + networking | Hands-on challenge session (signal separation problems) | Tutorial Part 2 — extensions + challenge |
