@@ -29,19 +29,21 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
-| **09:00–09:20** | Arrival & check-in; participant registration; informal networking | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | ESTEC Visit — facility tour; LISA mission overview |
-| **09:20–10:00** | Arrival & registration continues; informal networking | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | ESTEC Visit continues |
-| **10:00–10:30** | Environment setup (repo access, installs, debugging support) | ☕ Break (30 min) | ☕ Break (30 min) | Instrumentation + mission Q&A |
-| **10:30–11:30** | Environment setup continues; breakout help | Tutorial Part 2 — Extensions + challenge (60 min) | Tutorial Part 2 — Extensions + challenge (60 min) | ESTEC Visit — deeper demos |
-| **11:30–12:00** | Setup support; diagnostics notebooks | ☕ Break (30 min) | ☕ Break (30 min) | ESTEC wrap-up |
-| **12:00–12:30** | Setup support; informal discussions | Discussion (30 min) | Discussion (30 min) | Informal discussions |
-| **12:30–14:00** | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
-| **14:00–14:20** | Workshop opening (goals, datasets, challenges); **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talks — Session 1 (participant presentations) | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
-| **14:20–15:00** | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Session 1 continues | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) |
-| **15:00–15:30** | ☕ Break (30 min) | ☕ Break + networking | ☕ Break (30 min) | ☕ Break (30 min) |
-| **15:30–16:30** | Tutorial Part 2 — Extensions + challenge (60 min) | Contributed talks — Session 2 (participant presentations) | Tutorial Part 2 — Extensions + challenge (60 min) | Tutorial Part 2 — Extensions + challenge (60 min) |
-| **16:30–17:00** | ☕ Break (30 min) | Session 2 continues + synthesis discussion | ☕ Break (30 min) | ☕ Break (30 min) |
-| **17:00–17:30** | Discussion (30 min) | Closing remarks | Discussion (30 min) | Discussion + closing remarks (30 min) |
+| **09:30–09:50** | | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | ESTEC Visit — facility tour; LISA mission overview |
+| **09:50–10:30** | | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | ESTEC Visit continues |
+| **10:30–11:00** | | ☕ Break | ☕ Break | Instrumentation + mission Q&A |
+| **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | ESTEC Visit — deeper demos |
+| **12:00–12:30** | | ☕ Break | ☕ Break | ESTEC wrap-up |
+| **12:30–13:00** | | Discussion | Discussion | Informal discussions |
+| **13:00–13:45** | Registration | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
+| **13:45–14:00** | Welcome + Practical Info | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
+| **14:00–14:20** | **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talk 1 (20 min) | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
+| **14:20–15:00** | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Contributed talks 2–3 (20 min each) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) |
+| **15:00–15:30** | ☕ Break | ☕ Break | ☕ Break | ☕ Break |
+| **15:30–16:30** | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Contributed talks: <br>(4) Louis Le Saulnier: SBI for fast parameter estimation of LISA MBHB <br> (5) Alice Spadaro: Accurate and efficient simulation-based inference for massive black-hole binaries with LISA <br> (6) Federico Fantoccoli: SBI for searching for EMRIs | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) |
+| **16:30–17:00** | ☕ Break | ☕ Break | ☕ Break | ☕ Break |
+| **17:00–17:30** | Round table of intros | Arek Skorski: Unlocking LISA Science with ESA Datalabs | Discussion | Discussion + closing remarks |
+| **19:00** |  |  | Hackathon Dinner |  |
 ---
 
 ## Travelling Information
