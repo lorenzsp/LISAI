@@ -29,16 +29,19 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
-| 09:00–10:30 | Arrival & check-in; participant registration; informal networking | Stephen Green — Motivation + scientific framing (20 min); Tutorial Part 1 (baseline pipeline) | Niklas Houba — Motivation + scientific framing (20 min); Tutorial Part 1 (baseline pipeline) | ESTEC Visit — facility tour; LISA mission overview |
-| 10:30–11:30 | Environment setup (repo access, installs, debugging support) | Tutorial Part 1 continues → baseline completion and first results | Tutorial Part 1 continues → baseline completion and first results | ESTEC Visit continues; instrumentation + mission Q&A |
-| 11:30–12:30 | Setup support, diagnostics notebooks, breakout help | Tutorial Part 2 — extensions + challenge introduction and start | Tutorial Part 2 — extensions + challenge continuation | ESTEC wrap-up + informal discussions |
-| 12:30–14:00 | Lunch | Lunch | Lunch | Lunch |
-| 14:00–15:00 | Workshop opening (goals, datasets, challenges) + Christoph Weniger — motivation + framing + start tutorial | Contributed talks — Session 1 (participant presentations) | Tom Dooney — signal separation motivation + guided exploration | Maximilian Dax — motivation + framing + Tutorial Part 1 |
-| 15:00–15:30 | Christoph Weniger — Tutorial Part 1 (baseline pipeline) | Contributed talks — Session 1 continues | Guided exploration continues | Tutorial Part 1 continues |
-| 15:30–16:30 | Break + debugging + informal discussions | Break + networking | Hands-on challenge session (signal separation problems) | Tutorial Part 2 — extensions + challenge |
-| 16:30–17:00 | Tutorial Part 2 — extensions + challenge | Contributed talks — Session 2 | Break + regroup | Break + regroup |
-| 17:00–17:30 | Lightning demos + discussion + future directions | Contributed talks — Session 2 continues + synthesis discussion | Open problems discussion + wrap of methods day | Lightning demos + closing discussion + future directions |
-
+| **09:00–09:20** | Arrival & check-in; participant registration; informal networking | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | ESTEC Visit — facility tour; LISA mission overview |
+| **09:20–10:00** | Arrival & registration continues; informal networking | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | ESTEC Visit continues |
+| **10:00–10:30** | Environment setup (repo access, installs, debugging support) | ☕ Break (30 min) | ☕ Break (30 min) | Instrumentation + mission Q&A |
+| **10:30–11:30** | Environment setup continues; breakout help | Tutorial Part 2 — Extensions + challenge (60 min) | Tutorial Part 2 — Extensions + challenge (60 min) | ESTEC Visit — deeper demos |
+| **11:30–12:00** | Setup support; diagnostics notebooks | ☕ Break (30 min) | ☕ Break (30 min) | ESTEC wrap-up |
+| **12:00–12:30** | Setup support; informal discussions | Discussion (30 min) | Discussion (30 min) | Informal discussions |
+| **12:30–14:00** | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
+| **14:00–14:20** | Workshop opening (goals, datasets, challenges); **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talks — Session 1 (participant presentations) | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
+| **14:20–15:00** | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Session 1 continues | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) |
+| **15:00–15:30** | ☕ Break (30 min) | ☕ Break + networking | ☕ Break (30 min) | ☕ Break (30 min) |
+| **15:30–16:30** | Tutorial Part 2 — Extensions + challenge (60 min) | Contributed talks — Session 2 (participant presentations) | Tutorial Part 2 — Extensions + challenge (60 min) | Tutorial Part 2 — Extensions + challenge (60 min) |
+| **16:30–17:00** | ☕ Break (30 min) | Session 2 continues + synthesis discussion | ☕ Break (30 min) | ☕ Break (30 min) |
+| **17:00–17:30** | Discussion (30 min) | Closing remarks | Discussion (30 min) | Discussion + closing remarks (30 min) |
 ---
 
 ## Travelling Information
