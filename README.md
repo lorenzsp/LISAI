@@ -29,12 +29,12 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
-| **09:30–09:50** | | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | ESTEC Visit — facility tour; LISA mission overview |
-| **09:50–10:30** | | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | ESTEC Visit continues |
-| **10:30–11:00** | | ☕ Break | ☕ Break | Instrumentation + mission Q&A |
-| **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | ESTEC Visit — deeper demos |
-| **12:00–12:30** | | ☕ Break | ☕ Break | ESTEC wrap-up |
-| **12:30–13:00** | | Discussion | Discussion | Informal discussions |
+| **09:30–09:50** | | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |  |
+| **09:50–10:30** | | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | ESA LISA team presentation |
+| **10:30–11:00** | | ☕ Break | ☕ Break | ESA LISA team presentation |
+| **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | ESTEC Visit |
+| **12:00–12:30** | | ☕ Break | ☕ Break | ESTEC Visit |
+| **12:30–13:00** | | Presentation LISA Instrument | Presentation LISA Waveforms | Informal discussions |
 | **13:00–13:45** | Registration | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **13:45–14:00** | Welcome + Practical Info | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **14:00–14:20** | **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talk 1 (20 min) | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
