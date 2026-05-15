@@ -34,7 +34,7 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 | **10:30–11:00** | | ☕ Break | ☕ Break | ESA LISA team presentation |
 | **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | ESTEC Visit |
 | **12:00–12:30** | | ☕ Break | ☕ Break | ESTEC Visit |
-| **12:30–13:00** | | Presentation LISA Instrument | Presentation LISA Waveforms | Informal discussions |
+| **12:30–13:00** | | Jean-Baptiste Bayle: LISA Instrument and the Mojito Dataset | Presentation LISA Waveforms | Informal discussions |
 | **13:00–13:45** | Registration | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **13:45–14:00** | Welcome + Practical Info | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **14:00–14:20** | **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talk 1 (20 min) | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
