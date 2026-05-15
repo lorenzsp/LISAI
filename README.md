@@ -27,17 +27,20 @@ This informal hackathon event focuses leveraging machine learning to tackle the 
 
 The Laser Interferometer Space Antenna (LISA) is one of the European Space Agency flagship mission and will be the first space-based gravitational wave observatory, opening a new observational window in the millihertz frequency regime. To fully exploit LISA's scientific potential, we must extract gravitational wave signals from a complex mixture of noise and overlapping sources. This hackathon aims to develop machine learning approaches that combine the speed of neural networks with the statistical rigor of Bayesian inference to address LISA data analysis challenges.
 
-| Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 | 
+| Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
-| **Morning** | *Arrivals & Setup* | **Stephen Green**<br>Theory + Q&A<br>Hands-on Tutorial | **Niklas Houba**<br>Theory + Q&A<br>Hands-on Tutorial | **ESTEC Visit**<br>Research Facilities Tour<br>LISA Team Presentation |
-| **Lunch** | | Break | Break | Break | Break |
-| **Afternoon** | **Introductions**<br>**Christoph Weniger**<br>Theory + Q&A<br>Hands-on Tutorial | **Contributed Talks**<br>(Participant presentations) | **Tom Dooney**<br>Signal Separation<br>**Conference Dinner** | **Maximilian Dax**<br>Theory + Q&A<br>Hands-on Tutorial |
 
-Key challenges include:
-- Developing algorithms to characterize multiple overlapping signals from Galactic binaries
-- Designing Machine Learning (ML) approaches for extreme mass ratio inspirals
-- Implementing robust methods for noise inference
-- Developing techniques for signal separation
+| 09:00–10:30 | Arrival & check-in; participant registration; informal networking | Stephen Green — Motivation + scientific framing (20 min); Tutorial Part 1 (baseline pipeline) | Niklas Houba — Motivation + scientific framing (20 min); Tutorial Part 1 (baseline pipeline) | ESTEC Visit — facility tour; LISA mission overview |
+| 10:30–11:30 | Environment setup (repo access, installs, debugging support) | Tutorial Part 1 continues → baseline completion and first results | Tutorial Part 1 continues → baseline completion and first results | ESTEC Visit continues; instrumentation + mission Q&A |
+| 11:30–12:30 | Setup support, diagnostics notebooks, breakout help | Tutorial Part 2 — extensions + challenge introduction and start | Tutorial Part 2 — extensions + challenge continuation | ESTEC wrap-up + informal discussions |
+
+| 12:30–14:00 | Lunch | Lunch | Lunch | Lunch |
+
+| 14:00–15:00 | Workshop opening (goals, datasets, challenges) + Christoph Weniger — motivation + framing + start tutorial | Contributed talks — Session 1 (participant presentations) | Tom Dooney — signal separation motivation + guided exploration | Maximilian Dax — motivation + framing + Tutorial Part 1 |
+| 15:00–15:30 | Christoph Weniger — Tutorial Part 1 (baseline pipeline) | Contributed talks — Session 1 continues | Guided exploration continues | Tutorial Part 1 continues |
+| 15:30–16:30 | Break + debugging + informal discussions | Break + networking | Hands-on challenge session (signal separation problems) | Tutorial Part 2 — extensions + challenge |
+| 16:30–17:00 | Tutorial Part 2 — extensions + challenge | Contributed talks — Session 2 | Break + regroup | Break + regroup |
+| 17:00–17:30 | Lightning demos + discussion + future directions | Contributed talks — Session 2 continues + synthesis discussion | Open problems discussion + wrap of methods day | Lightning demos + closing discussion + future directions |
 
 ---
 
