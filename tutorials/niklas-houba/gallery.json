@@ -1,0 +1,174 @@
+{
+  "tol_f": 0.005,
+  "labels": [
+    "miss",
+    "merge",
+    "duplicate",
+    "undercount",
+    "overcount",
+    "exactK_wrong"
+  ],
+  "rates": {
+    "nominal": {
+      "miss": {
+        "count": 1,
+        "rate": 0.0008333333333333334
+      },
+      "merge": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "duplicate": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "undercount": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "overcount": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "exactK_wrong": {
+        "count": 1,
+        "rate": 0.0008333333333333334
+      },
+      "k_error": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "stress": {
+      "miss": {
+        "count": 238,
+        "rate": 0.2975
+      },
+      "merge": {
+        "count": 215,
+        "rate": 0.26875
+      },
+      "duplicate": {
+        "count": 24,
+        "rate": 0.03
+      },
+      "undercount": {
+        "count": 168,
+        "rate": 0.21
+      },
+      "overcount": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "exactK_wrong": {
+        "count": 70,
+        "rate": 0.0875
+      },
+      "k_error": {
+        "count": 168,
+        "rate": 0.21
+      }
+    }
+  },
+  "mystery": [
+    {
+      "subset": "stress",
+      "index": 634,
+      "labels": [
+        "miss",
+        "undercount"
+      ],
+      "k_true": 8,
+      "k_pred": 7,
+      "n_matched": 6,
+      "unmatched_slots": [
+        3
+      ],
+      "unmatched_sources": [
+        3,
+        5
+      ]
+    },
+    {
+      "subset": "stress",
+      "index": 85,
+      "labels": [
+        "exactK_wrong",
+        "miss"
+      ],
+      "k_true": 5,
+      "k_pred": 5,
+      "n_matched": 4,
+      "unmatched_slots": [
+        1
+      ],
+      "unmatched_sources": [
+        4
+      ]
+    },
+    {
+      "subset": "stress",
+      "index": 27,
+      "labels": [
+        "duplicate",
+        "merge",
+        "miss",
+        "undercount"
+      ],
+      "k_true": 7,
+      "k_pred": 6,
+      "n_matched": 3,
+      "unmatched_slots": [
+        2,
+        4,
+        5
+      ],
+      "unmatched_sources": [
+        0,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "subset": "stress",
+      "index": 4,
+      "labels": [
+        "duplicate"
+      ],
+      "k_true": 7,
+      "k_pred": 7,
+      "n_matched": 7,
+      "unmatched_slots": [],
+      "unmatched_sources": []
+    }
+  ],
+  "nms_cases": {
+    "helps": {
+      "subset": "stress",
+      "index": 70
+    },
+    "hurts": {
+      "subset": "stress",
+      "index": 3,
+      "slots": [
+        6,
+        7
+      ]
+    }
+  },
+  "rescue_cases": {
+    "success": {
+      "subset": "stress",
+      "index": 11,
+      "f_added": 2.7733333333333334,
+      "height_frac": 0.35
+    },
+    "false_positive": {
+      "subset": "stress",
+      "index": 6,
+      "f_added": 2.4833333333333334,
+      "height_frac": 0.15
+    }
+  }
+}
