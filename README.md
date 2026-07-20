@@ -5,7 +5,7 @@
 This informal hackathon event focuses leveraging machine learning to tackle the data analysis challenges of the future LISA mission.
 
 **Dates:** July 27–30, 2026  
-**Location:** [ESTEC](https://www.esa.int/About_Us/ESTEC/How_to_get_to_ESTEC), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands  
+**Location:** [ESTEC](https://maps.app.goo.gl/py45rHocKTnZSuCR6), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands  
 
 ## Useful Information
 
@@ -30,10 +30,10 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 | **10:30–11:00** | | ☕ Break | ☕ Break | ESA LISA team presentation |
 | **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | ESTEC Visit |
 | **12:00–12:30** | | ☕ Break | ☕ Break | ESTEC Visit |
-| **12:30–13:00** | | Jean-Baptiste Bayle: LISA Instrument and the Mojito Dataset | Machine Learning in other ESA missions | Informal discussions |
+| **12:30–13:00** | Registration | Jean-Baptiste Bayle: LISA Instrument and the Mojito Dataset | Machine Learning in other ESA missions | Informal discussions |
 | **13:00–13:45** | Registration | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **13:45–14:00** | Welcome + Practical Info | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
-| **14:00–14:20** | **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talk 1 (20 min) | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
+| **14:00–14:20** | **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Contributed talk: Giada Badaracco: Posterior Homotopy: Stress-Testing Gravitational-Wave Inference | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
 | **14:20–15:00** | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Contributed talks 2–3 (20 min each) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) |
 | **15:00–15:30** | ☕ Break | ☕ Break | ☕ Break | ☕ Break |
 | **15:30–16:30** | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Contributed talks: <br>(4) Louis Le Saulnier: SBI for fast parameter estimation of LISA MBHB <br> (5) Alice Spadaro: Accurate and efficient simulation-based inference for massive black-hole binaries with LISA <br> (6) Federico Fantoccoli: SBI for searching for EMRIs | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) |
@@ -119,22 +119,24 @@ ESTEC is located in Noordwijk. The most convenient locations to stay are:
 - [Fletcher Hotel Leidschendam – Den Haag](https://www.booking.com/hotel/nl/mercure-den-haag-leidschendam.en-gb.html)
 
 **Note:** ESA does not provide hotel booking services and has not authorized third parties to do so.
+---
+
+## Restaurants
+
+- [Paco Ciao](https://maps.app.goo.gl/PnKFp39qbHU3q31J7) 
+- [Hotspot](https://maps.app.goo.gl/eHx3RJSF5bFzTdST9)
+- [Surakarta](https://maps.app.goo.gl/PPu2U1LvU9hxriYd9)
+- [Sumatra House](https://maps.app.goo.gl/oHC6ojJgWk8cWJBg6)
+- [Tabú](https://maps.app.goo.gl/hnhUfDvcJkZ7bNq86)
+- [Mizūmi Ramen](https://maps.app.goo.gl/aR2CFvVftFCpxfqs8)
+- [Ramen55](https://maps.app.goo.gl/K8MyNq2Do7p462Uz5)
+- [Siri Thai](https://maps.app.goo.gl/qRj7r9nYaT3v5coXA)
 
 ---
 
 ## Organizing Committee
 
-**Event Lead:** Lorenzo Speri
-
----
-
-## Keynote Speakers
-
-- Christoph Weniger — Simulation-Based Inference  
-- Niklas Houba — LISA Noise & Source Separation  
-- Maximilian Dax — Neural Posterior Estimation & Flow Matching  
-- Stephen Green — Gravitational-Wave Parameter Estimation  
-- Tom Dooney — Source Separation  
+Lorenzo Speri
 
 ---
 
