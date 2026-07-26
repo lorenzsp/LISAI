@@ -38,7 +38,7 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 | **15:00–15:30** | ☕ Break | ☕ Break | ☕ Break | ☕ Break |
 | **15:30–16:30** | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | (4) Louis Le Saulnier: SBI for fast parameter estimation of LISA MBHB <br> (5) Alice Spadaro: Accurate and efficient simulation-based inference for massive black-hole binaries with LISA <br> (6) Federico Fantoccoli: SBI for searching for EMRIs | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) |
 | **16:30–17:00** | ☕ Break | ☕ Break | ☕ Break | ☕ Break |
-| **17:00–17:30** | Round table of intros | Arek Skorski: Unlocking LISA Science with ESA Datalabs | Discussion | Discussion + closing remarks |
+| **17:00–17:30** | Round table of intros | Arek Skorski: Unlocking LISA Science with ESA Datalabs | Discussion session | Closing remarks |
 | **19:00** |  |  | Hackathon Dinner |  |
 ---
 
