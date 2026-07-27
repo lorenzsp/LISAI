@@ -26,11 +26,11 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
 | **09:30–09:50** | | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |  |
-| **09:50–10:30** | | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | ESA LISA team presentation |
-| **10:30–11:00** | | ☕ Break | ☕ Break | ESA LISA team presentation |
-| **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | ESTEC Visit |
-| **12:00–12:30** | | ☕ Break | ☕ Break | ESTEC Visit |
-| **12:30–13:00** | Registration | Jean-Baptiste Bayle: LISA Instrument and the Mojito Dataset | Pablo Gomez: Machine Learning in ESA missions | ESTEC Visit |
+| **09:50–10:30** | | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Martin Hewitson: LISA Performance & Operations |
+| **10:30–11:00** | | ☕ Break | ☕ Break | Oliver Jennrich: ESTEC Visit |
+| **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | Oliver Jennrich: ESTEC Visit |
+| **12:00–12:30** | | ☕ Break | ☕ Break | Lennart Puck: Robotics Lab ESTEC |
+| **12:30–13:00** | Registration | Jean-Baptiste Bayle: LISA Instrument and the Mojito Dataset | Pablo Gomez: Machine Learning in ESA missions | Lennart Puck: Robotics Lab ESTEC |
 | **13:00–13:45** | Registration | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **13:45–14:00** | Welcome + Practical Info | 🍽 Lunch | 🍽 Lunch | 🍽 Lunch |
 | **14:00–14:20** | **Christoph Weniger** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | Talk session: <br>(1) Giada Badaracco: Posterior Homotopy: Stress-Testing Gravitational-Wave Inference | **Tom Dooney** — Presentation: signal separation motivation, scientific framing, method advantages & disadvantages (20 min) | **Maximilian Dax** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |
