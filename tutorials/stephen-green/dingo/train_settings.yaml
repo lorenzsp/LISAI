@@ -1,0 +1,82 @@
+data:
+  waveform_dataset_path: training_data/waveform_dataset.hdf5  # Contains intrinsic waveforms
+  train_fraction: 0.95   # 285000 train / 15000 validation
+  detectors:
+    - H1
+    - L1
+  extrinsic_prior:  # Sampled at train time
+    dec: default
+    ra: default
+    geocent_time: bilby.core.prior.Uniform(minimum=-0.10, maximum=0.10, name='geocent_time')
+    psi: default
+    luminosity_distance: bilby.core.prior.Uniform(minimum=100.0, maximum=1000.0, name='luminosity_distance')
+  ref_time: 1126259462.391
+  inference_parameters:
+  - chirp_mass
+  - mass_ratio
+  - chi_1
+  - chi_2
+  - theta_jn
+  - dec
+  - ra
+  - geocent_time
+  - luminosity_distance
+  - psi
+  - phase
+
+# Model architecture
+model:
+  posterior_model_type: normalizing_flow
+  # kwargs for neural spline flow
+  posterior_kwargs:
+    num_flow_steps: 10
+    base_transform_kwargs:
+      hidden_dim: 256
+      num_transform_blocks: 5
+      activation: elu
+      dropout_probability: 0.0
+      batch_norm: True
+      num_bins: 8
+      base_transform_type: rq-coupling
+  # kwargs for embedding net
+  embedding_kwargs:
+    output_dim: 128
+    hidden_dims: [2048, 1024, 512, 256]
+    activation: elu
+    dropout: 0.0
+    batch_norm: True
+    svd:
+      num_training_samples: 20000
+      num_validation_samples: 2000
+      size: 200
+
+# The first (and only) stage of training.
+training:
+  stage_0:
+    epochs: 400
+    asd_dataset_path: training_data/asd_dataset/asds_O1.hdf5
+    freeze_rb_layer: True
+    optimizer:
+      type: adam
+      lr: 0.0005
+    scheduler:
+      type: cosine
+      T_max: 400
+    batch_size: 1024
+    # Patience is set absurdly high: we never want training to stop early, we only
+    # want the side effect of writing best_model.pt whenever the validation loss
+    # improves, so that the best epoch can be selected afterwards.
+    early_stopping:
+      patience: 100000
+      metric: validation
+      verbose: False
+
+# Local settings for training that have no impact on the final trained network.
+local:
+  device: cuda
+  num_workers: 8
+  runtime_limits:
+    max_time_per_run: 43200   # 12 h hard stop; the run took about 4 h
+    max_epochs_per_run: 400
+  checkpoint_epochs: 20
+  leave_waveforms_on_disk: False

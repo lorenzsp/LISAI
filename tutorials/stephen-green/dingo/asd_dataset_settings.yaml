@@ -1,0 +1,22 @@
+dataset_settings:
+  # Match the waveform-dataset domain exactly: f_min 20 / f_max 1024 / delta_f 0.25.
+  # (delta_f = 1/T, hence T = 4.0 s below.)
+  f_min: 0
+  f_max: 1024.0
+  f_s: 4096
+  time_psd: 1024   # s of data per PSD estimate -> 256 Welch segments of T = 4 s
+  T: 4.0
+  window:
+    roll_off: 0.4
+    type: tukey
+  time_gap: 0          # time skipped between consecutive PSD estimates
+  num_psds_max: 1   # if set > 0, only a subset of all available PSDs will be used
+  detectors:
+    - H1
+    - L1
+  observing_run: O1
+# NOTE: the time segment is NOT dingo's default (= the first valid segments of O1).
+# It is supplied explicitly with --time_segments_file, and is the 1024 s of off-source
+# O1 data ending 16 s before the GW150914 trigger (GPS 1126258422 - 1126259446),
+# verified to lie inside the O1_{H1,L1}_BURST_CAT2 science segment containing the event
+# (H1 [1126256645, 1126264408], L1 [1126256829, 1126264691]).
