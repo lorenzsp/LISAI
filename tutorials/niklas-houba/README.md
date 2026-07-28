@@ -1,4 +1,4 @@
-# SlotFlow tutorials — ESA "Machine Learning Methods for LISA"
+[# SlotFlow tutorials — ESA "Machine Learning Methods for LISA"
 
 Self-contained folder: everything both tutorials need is inside, with
 relative paths. No downloads required (one optional exception, below).
@@ -54,3 +54,4 @@ curl -L --create-dirs -o pretrained_model/test_clariden/checkpoints/best_model.c
   `predictions_pack.npz` is missing — it isn't, so no network access is
   needed.
 - Questions: Niklas Houba <nhouba@phys.ethz.ch>. Paper: arXiv:2511.23228.
+](https://github.com/nhouba/slotflow-esa-workshop)
