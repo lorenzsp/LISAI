@@ -1,57 +1,57 @@
-[# SlotFlow tutorials — ESA "Machine Learning Methods for LISA"
+# Neural Posterior Estimation for LISA
 
-Self-contained folder: everything both tutorials need is inside, with
-relative paths. No downloads required (one optional exception, below).
+Tutorial material for the **AI for LISA Hackathon**, ESA/ESTEC, Noordwijk — Tuesday morning,
+Stephen Green. Build a normalizing flow from scratch on a simplified LISA galactic binary,
+validate it, extend it to a prior twenty times wider by heterodyning, then do the same thing with
+DINGO in four commands.
 
-## Quick start
+## Quick start (Colab)
 
-```bash
-pip install torch numpy scipy matplotlib scikit-learn jupyter ipywidgets
-# (tested with torch 2.5.1, numpy 2.1.3, scipy 1.14.1, matplotlib 3.10.1,
-#  scikit-learn 1.6.1 — nearby versions should be fine)
+Open a notebook and **Runtime → Run all**:
 
-jupyter lab          # start FROM THIS FOLDER, then open the notebooks
-```
-
-| notebook | what it is | runtime |
+| | | |
 |---|---|---|
-| `slotflow_tutorial_1_toy.ipynb` | Session 1 (40 min): train a toy set-prediction model, break it with an ordered loss, fix it with Hungarian matching. One TODO. | all cells < 10 s; whole notebook ~1 min |
-| `slotflow_tutorial_2_diagnose.ipynb` | Session 2 (60 min): diagnose the pretrained SlotFlow from a precomputed prediction pack — slot tables, failure gallery, catalogue challenge. One coding task. | everything < 2 s per cell |
-| `slotflow_tutorial_*_solution.ipynb` | The same notebooks with reference implementations, fully executed (all outputs and figures included — readable without running anything). | — |
+| Part 1 | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stephengreen/LISAAI-Hackathon-ESTEC/blob/main/part1_npe.ipynb) | NPE from scratch, then validate it |
+| Part 2a | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stephengreen/LISAAI-Hackathon-ESTEC/blob/main/part2a_conditioning.ipynb) | a wider prior, and how to survive it |
+| Part 2b | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stephengreen/LISAAI-Hackathon-ESTEC/blob/main/part2b_dingo.ipynb) | the same method as DINGO, stored outputs included |
 
-Both run CPU-only; no GPU needed. The `*_toy`/`*_diagnose` versions are
-what workshop participants work through (they contain the TODOs); the
-`*_solution` versions are the reveals.
+Select **Runtime → Change runtime type → T4 GPU**. The networks in Parts 1 and 2a train live,
+about five and three minutes on a T4; set `TRAIN_LIVE = False` to load a stored network from
+`checkpoints/` instead.
 
-## What's in here
+## Running on a laptop
 
-- `toy/` — the Tutorial 1 simulator, model, and pre-generated data +
-  staged checkpoints (so every training cell is skippable).
-- `predictions_pack.npz` (21 MB) + `gallery.json` — the pretrained
-  model's offline outputs on 2,000 test signals; Tutorial 2 reads only
-  these. `viz.py`, `t2_helpers.py`, `catalogue_metrics.py` — shared
-  plotting/metrics helpers.
-- `src/` + `pretrained_model/test_clariden/model_config.pt` — only used
-  by the **optional** "run the model yourself" cells (Tutorial 2, §1 and
-  appendix A0).
+With [uv](https://docs.astral.sh/uv/) installed:
 
-## Optional: run the pretrained network live
-
-Everything works without this. If you want the §1/A0 cells to run the
-actual network (instead of printing a pointer), fetch the released
-weights (464 MB) into this folder — also needs `pip install nflows`:
-
-```bash
-curl -L --create-dirs -o pretrained_model/test_clariden/checkpoints/best_model.ckpt \
-  https://github.com/nhouba/slotflow-inference/releases/download/v1.0.0/best_model.ckpt
+```
+git clone https://github.com/stephengreen/LISAAI-Hackathon-ESTEC.git
+cd LISAAI-Hackathon-ESTEC
+uv run jupyter lab
 ```
 
-## Notes
+`uv run` builds the pinned environment from `uv.lock` on first use. Without uv: make a fresh
+virtual environment (Python ≥ 3.10), `pip install glasflow corner torch matplotlib scipy jupyter`,
+and open the notebooks. Training on a laptop CPU takes about seventeen minutes (Part 1) and ten
+(Part 2a); `TRAIN_LIVE = False` skips it.
 
-- Notebooks expect the working directory to be this folder (starting
-  Jupyter here is enough; the setup cell also copes with the parent).
-- Tutorial 2's setup cell only tries to download the pack if
-  `predictions_pack.npz` is missing — it isn't, so no network access is
-  needed.
-- Questions: Niklas Houba <nhouba@phys.ethz.ch>. Paper: arXiv:2511.23228.
-](https://github.com/nhouba/slotflow-esa-workshop)
+Part 2b needs DINGO in an environment of its own — `pip install dingo-gw jupyter`, which pulls
+LALSuite, bilby and gwpy — and its first cell does that install automatically on Colab. Its
+pipeline cells run anywhere; the inference sections sample from a trained network that is not
+distributed with the repository, so their outputs ship stored in the notebook.
+
+## Contents
+
+| | |
+|---|---|
+| `presentation-LISAAI-ESTEC.pdf` | the morning's talk |
+| `part1_npe.ipynb` | Part 1 — NPE from scratch on a galactic binary; validated by MCMC, importance sampling, and a P–P test. Exercises unsolved |
+| `part2a_conditioning.ipynb` | Part 2a — heterodyning and a tile scan cover the widened prior with the frozen Part 1 network. Exercises unsolved |
+| `part2b_dingo.ipynb` | Part 2b — the DINGO pipeline end to end, on an injection and on GW150914 |
+| `solutions/` | Parts 1 and 2a with the exercises worked and all outputs stored |
+| `checkpoints/` | trained networks, loaded when `TRAIN_LIVE = False` |
+| `dingo/` | the DINGO settings files Part 2b drives |
+| `results/` | stored `dingo_pipe` output for GW150914, and the public [GWTC-1 samples](https://dcc.ligo.org/LIGO-P1800370/public) |
+| `gb_simulator.py`, `gb_wide.py` | the simulator as importable modules, with self-tests; the notebooks define everything inline |
+
+Thursday's session (Max Dax) solves the same galactic-binary problem with flow matching in
+`dingo.core`.
