@@ -1,35 +1,9 @@
-# Tom Dooney - Source Separation
+# DeepExtractor — LISA AI Hackathon
 
-## Tutorial Setup
+Materials for the DeepExtractor tutorial at the LISA AI Hackathon.
 
-This tutorial is available on colab click [here](https://colab.research.google.com/github/tomdooney95/deepextractor/blob/main/notebooks/training_tutorial_colab.ipynb) to run it on colab. This is based on [DeepExtractor](https://deepextractor.readthedocs.io/en/latest) available on [GitHub](https://github.com/tomdooney95/deepextractor).
+- **Slides**: `DeepExtractor_LISA_AI_Hackathon_slides.pptx`
+- **Hackathon notebook** (exercises): `DeepExtractor_LISA_AI_Hackathon.ipynb`
+- **Solutions notebook**: `DeepExtractor_LISA_AI_Hackathon_solutions.ipynb`
 
-This folder contains the materials for the tutorial on Source Separation by Tom Dooney.
-
-## Setup Instructions
-
-Please fill in the following sections with the necessary information for setting up the tutorial environment.
-
-### Required Software and Libraries
-
-- Python version: 
-- Libraries: 
-
-### Installation Steps
-
-```
-# Add installation commands here
-```
-
-### Initial Code and Data
-
-Describe or provide links to initial code/notebooks and data files.
-
-### Hardware Requirements
-
-- CPU/GPU requirements
-- Memory
-
-### Additional Notes
-
-Any other setup notes.
+See the main [DeepExtractor repo](https://github.com/tomdooney95/deepextractor) for the package and full documentation.
