@@ -5,10 +5,10 @@ Works on plain numpy arrays from the predictions pack — no model needed.
 Conventions
 -----------
 * q_k[j] = q(K = j+1 | x): the cardinality posterior over K in {1..M}.
-* Slots are instantiated in index order, so slot i (0-based) is active
-  iff K >= i+1. Hence the derived per-slot existence probability
-      p_i = P(K >= i+1 | x) = sum_{j >= i} q_k[j],
-  which is monotone non-increasing in i.
+* K_MAP = argmax_k q(k | x) is the model's own answer for the count.
+* Slots are instantiated in index order, so the model's catalogue is the
+  first K_MAP slots; the remaining slots of the forced-10 output are
+  surplus and carry no source.
 * A predicted catalogue is an array (n, 3) of [amp, phase, freq] rows.
 * Matching between a predicted and a true catalogue is a Hungarian
   assignment on |f_pred - f_true|; a pair counts as a detection when
@@ -22,14 +22,9 @@ from scipy.optimize import linear_sum_assignment
 TOL_F = 0.005  # Hz; ~1.5x the Rayleigh limit 1/T = 1/300 Hz of the long stream
 
 
-def existence_probs(q_k):
-    """p_i = P(K >= i+1 | x) for each slot i. q_k: (..., M)."""
-    return np.flip(np.cumsum(np.flip(q_k, axis=-1), axis=-1), axis=-1)
-
-
-def k_from_threshold(q_k, tau):
-    """K_hat(tau) = #{ i : p_i > tau }. tau=0.5 is the posterior-median K."""
-    return (existence_probs(q_k) > tau).sum(axis=-1)
+def k_map(q_k):
+    """K_MAP = argmax_k q(k | x), the model's own answer. q_k: (..., M)."""
+    return np.argmax(q_k, axis=-1) + 1
 
 
 def match_catalogue(pred, truth, tol_f=TOL_F):
@@ -98,31 +93,30 @@ def slot_distance(a, b, sigma_f=TOL_F, sigma_a=0.25):
     return ((a[2] - b[2]) / sigma_f) ** 2 + ((a[0] - b[0]) / sigma_a) ** 2
 
 
-def suppress_duplicates(cat, p, eps=4.0, sigma_f=TOL_F, sigma_a=0.25):
+def suppress_duplicates(cat, eps=4.0, sigma_f=TOL_F, sigma_a=0.25):
     """Catalogue-level non-maximum suppression: when two rows are closer
-    than eps in normalized source space, keep the higher-existence one.
-    cat: (n, 3); p: (n,) existence probabilities. Returns kept indices."""
-    order = np.argsort(-np.asarray(p))
+    than eps in normalized source space, keep the earlier one.
+
+    cat: (n, 3), in priority order — for a model catalogue that is the
+    slot order the network instantiated (slot 0 first), and rescued
+    candidates appended after the network's own rows. Returns kept indices.
+    """
     kept = []
-    for i in order:
+    for i in range(len(cat)):
         if all(slot_distance(cat[i], cat[j], sigma_f, sigma_a) >= eps
                for j in kept):
             kept.append(i)
-    return sorted(kept)
+    return kept
 
 
-def build_catalogue(maps, q_k, tau=0.5, nms_eps=None,
-                    sigma_f=TOL_F, sigma_a=0.25):
+def build_catalogue(maps, k, nms_eps=None, sigma_f=TOL_F, sigma_a=0.25):
     """The decision layer participants tune in the challenge.
 
-    maps: (M, 3) per-slot MAP parameters; q_k: (M,) cardinality posterior.
-    Threshold the derived existence probabilities at tau, then optionally
-    apply duplicate suppression. Returns the catalogue (n, 3).
+    maps: (M, 3) per-slot MAP parameters; k: how many slots to claim
+    (K_MAP is the model's own answer). Optionally apply duplicate
+    suppression afterwards. Returns the catalogue (n, 3).
     """
-    p = existence_probs(q_k)
-    active = np.where(p > tau)[0]
-    cat, pa = maps[active], p[active]
+    cat = maps[:int(max(0, min(len(maps), k)))]
     if nms_eps is not None and len(cat) > 1:
-        keep = suppress_duplicates(cat, pa, nms_eps, sigma_f, sigma_a)
-        cat = cat[keep]
+        cat = cat[suppress_duplicates(cat, nms_eps, sigma_f, sigma_a)]
     return cat

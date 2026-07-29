@@ -49,8 +49,8 @@
         "rate": 0.26875
       },
       "duplicate": {
-        "count": 24,
-        "rate": 0.03
+        "count": 8,
+        "rate": 0.01
       },
       "undercount": {
         "count": 168,
@@ -73,34 +73,32 @@
   "mystery": [
     {
       "subset": "stress",
-      "index": 634,
+      "index": 229,
       "labels": [
         "miss",
         "undercount"
       ],
       "k_true": 8,
       "k_pred": 7,
-      "n_matched": 6,
-      "unmatched_slots": [
-        3
-      ],
+      "n_matched": 7,
+      "unmatched_slots": [],
       "unmatched_sources": [
-        3,
-        5
+        2
       ]
     },
     {
       "subset": "stress",
-      "index": 85,
+      "index": 689,
       "labels": [
+        "duplicate",
         "exactK_wrong",
         "miss"
       ],
-      "k_true": 5,
-      "k_pred": 5,
-      "n_matched": 4,
+      "k_true": 8,
+      "k_pred": 8,
+      "n_matched": 7,
       "unmatched_slots": [
-        1
+        7
       ],
       "unmatched_sources": [
         4
@@ -132,15 +130,20 @@
     },
     {
       "subset": "stress",
-      "index": 4,
+      "index": 85,
       "labels": [
-        "duplicate"
+        "exactK_wrong",
+        "miss"
       ],
-      "k_true": 7,
-      "k_pred": 7,
-      "n_matched": 7,
-      "unmatched_slots": [],
-      "unmatched_sources": []
+      "k_true": 5,
+      "k_pred": 5,
+      "n_matched": 4,
+      "unmatched_slots": [
+        1
+      ],
+      "unmatched_sources": [
+        4
+      ]
     }
   ],
   "nms_cases": {

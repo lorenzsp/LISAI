@@ -6,8 +6,9 @@ setup cell), then import what you need. Conventions:
 
  * parameter rows are [amp, phase, freq] — frequency is COLUMN 2;
  * frequencies in Hz; errors/widths/tolerances displayed in mHz;
- * K_true = injected count, K_MAP = argmax q(K|x), K_tau = #{i: p_i > tau};
- * active slots are always the K_tau prefix (slots exist in index order).
+ * K_true = injected count, K_MAP = argmax q(K|x) = the model's answer;
+ * the model's catalogue is the first K_MAP slots (slots are instantiated
+   in index order); the rest of the forced-10 output is surplus.
 """
 
 import json
@@ -18,18 +19,17 @@ import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
 
 from viz import C, mark_pred, title2, fmt_mhz
-from catalogue_metrics import (existence_probs, match_catalogue,
-                               catalogue_scores, TOL_F)
+from catalogue_metrics import match_catalogue, catalogue_scores, TOL_F
 
-__all__ = ["pack", "gallery", "M", "SUBSETS", "EX", "TRUTHS", "FREQS_AXIS",
-           "BAND", "FB", "DF_BIN", "PEAKS", "DEV", "FULL", "k_tau",
+__all__ = ["pack", "gallery", "M", "SUBSETS", "TRUTHS", "FREQS_AXIS",
+           "BAND", "FB", "DF_BIN", "PEAKS", "DEV", "FULL", "k_map",
            "evaluate", "baseline_catalogue", "show_signal", "slot_table",
-           "live_demo"]
+           "check_my_catalogue", "live_demo"]
 
 pack = gallery = None
 M = 10
 SUBSETS = ["nominal", "stress"]
-EX = TRUTHS = PEAKS = None
+TRUTHS = PEAKS = None
 FREQS_AXIS = np.fft.rfftfreq(3000, d=0.1)      # long stream: 10 Hz, 300 s
 BAND = (FREQS_AXIS > 2.45) & (FREQS_AXIS < 3.05)
 FB = FREQS_AXIS[BAND]
@@ -44,13 +44,12 @@ def init(pack_path="predictions_pack.npz", gallery_path="gallery.json"):
     (An NpzFile decompresses the WHOLE array on every [] access, which
     turns per-signal loops into minutes — hence the dict.)
     """
-    global pack, gallery, EX, TRUTHS, PEAKS, FULL
+    global pack, gallery, TRUTHS, PEAKS, FULL
     t0 = time.time()
     with np.load(pack_path) as npz:
         pack = {k: npz[k] for k in npz.files}
     with open(gallery_path) as fh:
         gallery = json.load(fh)
-    EX = {s: existence_probs(pack[f"{s}_q_k"]) for s in SUBSETS}
     TRUTHS = {s: [pack[f"{s}_truth"][i][:int(pack[f"{s}_k_true"][i])]
                   for i in range(len(pack[f"{s}_k_true"]))] for s in SUBSETS}
     PEAKS = {}
@@ -66,9 +65,9 @@ def init(pack_path="predictions_pack.npz", gallery_path="gallery.json"):
           f"structural 4 configs")
 
 
-def k_tau(subset, i, tau=0.5):
-    """K_tau: number of slots whose derived existence p_i exceeds tau."""
-    return int((EX[subset][i] > tau).sum())
+def k_map(subset, i):
+    """K_MAP: the model's own answer for the count on this signal."""
+    return int(pack[f"{subset}_k_pred"][i])
 
 
 def baseline_catalogue(i):
@@ -167,10 +166,11 @@ def live_demo(seed=20260714, K=5, ckpt_dir=None):
               f"   (|Δf| = {fmt_mhz(abs(tf - ef))})")
 
 
-def show_signal(subset, i, tau=0.5, ax=None, title=None, legend=False):
-    """Spectrum + truth (dashed) + ACTIVE slots at threshold tau.
+def show_signal(subset, i, k=None, ax=None, title=None, legend=False):
+    """Spectrum + truth (dashed) + the slots the model claims.
 
-    Active = the K_tau prefix; matched slots blue ○, unmatched pink ◆.
+    Claimed = the first K_MAP slots (pass k to claim a different number);
+    matched slots blue ○, unmatched pink ◆.
     Slot markers sit in a strip at the top — their HEIGHT is arbitrary,
     only their frequency position carries information.
     """
@@ -178,8 +178,9 @@ def show_signal(subset, i, tau=0.5, ax=None, title=None, legend=False):
     kt = int(pack[f"{subset}_k_true"][i])
     truth = pack[f"{subset}_truth"][i][:kt]
     maps = pack[f"{subset}_maps"][i]
-    ktau = k_tau(subset, i, tau)
-    pairs, un_p, _ = match_catalogue(maps[:ktau], truth)
+    kmap = int(pack[f"{subset}_k_pred"][i])
+    nclaim = kmap if k is None else int(k)
+    pairs, un_p, _ = match_catalogue(maps[:nclaim], truth)
     matched = {s for s, _ in pairs}
     if ax is None:
         _, ax = plt.subplots(figsize=(8, 2.6))
@@ -190,16 +191,16 @@ def show_signal(subset, i, tau=0.5, ax=None, title=None, legend=False):
         ax.axvline(f, color=C["truth"], ls="--", lw=0.9, alpha=0.65)
         ax.plot(f, top * 0.97, "v", color=C["truth"], ms=8, mec="white",
                 mew=0.5, zorder=6)
-    for s in range(ktau):
+    for s in range(nclaim):
         if s in matched:
             mark_pred(ax, maps[s, 2], top * 0.89, ms=8)
         else:
             ax.plot(maps[s, 2], top * 0.89, "D", color=C["alert"], ms=7,
                     zorder=6)
     ax.set_xlabel("frequency  [Hz]")
-    kmap = int(pack[f"{subset}_k_pred"][i])
     title2(ax, title or f"{subset}[{i}]",
-           f"K_true={kt}   K_MAP={kmap}   K_τ(τ={tau})={ktau}")
+           f"K_true={kt}   K_MAP={kmap}"
+           + ("" if k is None else f"   claimed={nclaim}"))
     if legend:
         ax.plot([], [], "v", color=C["truth"], label="true source")
         ax.plot([], [], "o", mfc="none", color=C["pred"], label="matched slot")
@@ -208,33 +209,72 @@ def show_signal(subset, i, tau=0.5, ax=None, title=None, legend=False):
     return ax
 
 
-def slot_table(subset, i, tau=0.5):
-    """Text inspection of one signal. Active slots = K_tau prefix."""
-    p = EX[subset][i]
+def slot_table(subset, i, k=None):
+    """Text inspection of one signal. Claimed slots = the first K_MAP."""
     maps = pack[f"{subset}_maps"][i]
     stds = pack[f"{subset}_stds"][i]
     kt = int(pack[f"{subset}_k_true"][i])
     kmap = int(pack[f"{subset}_k_pred"][i])
-    ktau = int((p > tau).sum())
+    nclaim = kmap if k is None else int(k)
     truth = pack[f"{subset}_truth"][i][:kt]
-    pairs, un_p, un_t = match_catalogue(maps[:ktau], truth)
+    pairs, un_p, un_t = match_catalogue(maps[:nclaim], truth)
     match_of = dict(pairs)
-    print(f"── {subset}[{i}]   K_true={kt}   K_MAP={kmap}   "
-          f"K_τ(τ={tau})={ktau}")
-    print(f"{'slot':>4} {'p_i':>6} {'f [Hz]':>9} {'σ_f [mHz]':>10} "
+    print(f"── {subset}[{i}]   K_true={kt}   K_MAP={kmap}"
+          + ("" if k is None else f"   claimed={nclaim}"))
+    print(f"{'slot':>4} {'f [Hz]':>9} {'σ_f [mHz]':>10} "
           f"{'A':>5}  status")
     for s in range(M):
-        if s < ktau:
+        if s < nclaim:
             if s in match_of:
                 df = abs(maps[s, 2] - truth[match_of[s], 2])
                 status = f"matched → source {match_of[s]} (|Δf|={fmt_mhz(df)})"
             else:
-                status = "ACTIVE, UNMATCHED"
+                status = "CLAIMED, UNMATCHED"
         else:
-            status = "inactive"
-        print(f"{s:>4} {p[s]:>6.2f} {maps[s, 2]:>9.4f} "
+            status = "surplus (not claimed)"
+        print(f"{s:>4} {maps[s, 2]:>9.4f} "
               f"{1e3 * stds[s, 2]:>10.2f} {maps[s, 0]:>5.2f}  {status}")
     if un_t:
         print("  ✗ unexplained true sources: " + ", ".join(
             f"f={truth[j, 2]:.4f} Hz (A={truth[j, 0]:.2f})" for j in un_t))
     print()
+
+
+def check_my_catalogue(build_fn, idx=None):
+    """Contract check + instant dev score for a participant's decision layer.
+
+    Mirrors Tutorial 1's self-check: first make sure the function returns what
+    the scorer expects (with a readable message if not), then score it on the
+    development split against the model's own catalogue.
+    """
+    for i in (0, 1, 7, 42, 149):
+        cat = np.asarray(build_fn(int(i)), dtype=float)
+        assert cat.ndim == 2 and cat.shape[1] == 3, (
+            f"build_my_catalogue({i}) returned shape {cat.shape}; expected "
+            "(n, 3) — one row per claimed source, columns [amp, phase, freq]")
+        assert np.isfinite(cat).all(), (
+            f"build_my_catalogue({i}) returned non-finite values")
+        if len(cat):
+            f = cat[:, 2]
+            assert f.min() > 2.0 and f.max() < 3.5, (
+                f"build_my_catalogue({i}): frequencies are "
+                f"{f.min():.3f}–{f.max():.3f} Hz, which is outside the band — "
+                "column 2 must be the frequency in Hz (rows are [amp, phase, freq])")
+    print("contract ok ✔   (n, 3) rows of [amp, phase, freq]\n")
+
+    base = evaluate(baseline_catalogue, DEV, "the model itself (dev 150)")
+    mine = evaluate(build_fn, DEV, "yours              (dev 150)")
+    d = mine["f1"] - base["f1"]
+    if abs(d) < 1e-12:
+        print("\n→ identical to the model's own catalogue: nothing has changed "
+              "yet.\n  Edit the marked block above, then re-run this cell.")
+    elif d > 0:
+        print(f"\n→ you beat the model's own catalogue: F1 {base['f1']:.3f} → "
+              f"{mine['f1']:.3f}  🎉\n  Now check the trade-off plot below — F1 "
+              "hides which way you paid for it.")
+    else:
+        print(f"\n→ F1 {base['f1']:.3f} → {mine['f1']:.3f}, so this is behind "
+              "the baseline.\n  That is useful information too: look at recall "
+              "vs false positives below.\n  The three hints above open up if "
+              "you want a concrete recipe.")
+    return mine

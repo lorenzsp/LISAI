@@ -25,7 +25,7 @@ The Laser Interferometer Space Antenna (LISA) is one of the European Space Agenc
 
 | Time | Monday, July 27 | Tuesday, July 28 | Wednesday, July 29 | Thursday, July 30 |
 |------|----------------|------------------|--------------------|--------------------|
-| **09:30–09:50** | | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |  |
+| **09:30–09:50** | | **Stephen Green** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) | **Niklas Houba & Giovanni Giarda** — Presentation: motivation, scientific framing, method advantages & disadvantages (20 min) |  |
 | **09:50–10:30** | | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Tutorial Part 1 — Intro + pipeline; baseline solution delivered at end of session (40 min) | Martin Hewitson: LISA Performance & Operations |
 | **10:30–11:00** | | ☕ Break | ☕ Break | Oliver Jennrich: ESTEC Visit |
 | **11:00–12:00** | | Tutorial Part 2 — Extensions + challenge + solution delivered at end of session (60 min) | Tutorial Part 2 — Extensions + challenge  + solution delivered at end of session (60 min) | Oliver Jennrich: ESTEC Visit |
