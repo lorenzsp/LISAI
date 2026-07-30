@@ -7,6 +7,8 @@ This informal hackathon event focuses leveraging machine learning to tackle the 
 **Dates:** July 27–30, 2026  
 **Location:** [ESTEC](https://maps.app.goo.gl/py45rHocKTnZSuCR6), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands  
 
+If you use these notebooks or tutorial materials in your work, please cite the Zenodo record (DOI: [10.5281/zenodo.21703272](https://doi.org/10.5281/zenodo.21703272)); see the [Citation and Acknowledgment](#citation-and-acknowledgment) section below.
+
 ## Useful Information
 
 - [Event Overview](#event-overview)
@@ -138,6 +140,48 @@ ESTEC is located in Noordwijk. The most convenient locations to stay are:
 
 Lorenzo Speri
 
+---
+
+## Citation and Acknowledgment
+
+If you use materials from this repository (including notebooks, tutorial code, slides, or derived workflows) in academic work, talks, reports, or software releases, please cite the hackathon record:
+
+- DOI: [10.5281/zenodo.21703272](https://doi.org/10.5281/zenodo.21703272)
+- Zenodo: [https://doi.org/10.5281/zenodo.21703272](https://doi.org/10.5281/zenodo.21703272)
+
+### Recommended acknowledgment text
+
+Use or adapt one of the following:
+
+1. "This work used materials from the LISA AI Hackathon: *Machine Learning Methods for LISA* (Speri, 2026), DOI: 10.5281/zenodo.21703272."
+2. "Parts of this analysis were developed using tutorials presented at the LISA AI Hackathon: *Machine Learning Methods for LISA* (Zenodo DOI: 10.5281/zenodo.21703272)."
+3. "We acknowledge the LISA AI Hackathon tutorials and associated materials (Speri, 2026, DOI: 10.5281/zenodo.21703272), which informed this work."
+
+### BibTeX
+
+```bibtex
+@misc{speri_2026_21703272,
+	author       = {Speri, Lorenzo},
+	title        = {LISA AI Hackathon: Machine Learning Methods for
+									 LISA
+									},
+	month        = jul,
+	year         = 2026,
+	publisher    = {Zenodo},
+	doi          = {10.5281/zenodo.21703272},
+	url          = {https://doi.org/10.5281/zenodo.21703272},
+}
+```
+
+### Scope of citation
+
+Please cite the Zenodo record when:
+
+- You directly reuse notebook code, figures, or tutorial content.
+- You adapt tutorial methods or pipelines for your own analysis.
+- The conference tutorials materially informed your approach, even if code was reimplemented.
+
+This will help me organize more events like this!
 ---
 
 ## Code of Conduct
